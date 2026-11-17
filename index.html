@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" style="background:#100f0d;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Carlo Abiva | 2D Game Developer & Artist</title>
+
+    <meta name="description" content="Portfolio of John Carlo N. Abiva — 2D Game Developer and Artist. Godot, Unity, Ibis Paint, Clip Studio, Krita, Blender.">
+    <meta name="author" content="John Carlo N. Abiva">
+
+    <!-- Google Fonts: Reverse 1999 Vintage Cinematic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="vintage-theme" style="background:#100f0d; color:#c8bca4;">
+
+    <!-- =========================================================
+         LOADING SCREEN — Reverse 1999 Style
+    ========================================================= -->
+    <div class="r-loader" id="loaderScreen">
+        <!-- Dark base image -->
+        <div class="r-loader-bg"></div>
+        <!-- Bright reveal layer (clips from bottom to top as it fills) -->
+        <div class="r-loader-reveal" id="loaderReveal"></div>
+        <!-- Grain texture over loading screen -->
+        <div class="r-loader-grain"></div>
+        <!-- Left side text & progress -->
+        <div class="r-loader-text">
+            <div class="r-loader-brand-box">
+                <span class="r-loader-brand-initial">J</span>
+                <div class="r-loader-title-stack">
+                    <span class="r-loader-brand-name">JOHN CARLO ABIVA</span>
+                    <span class="r-loader-brand-sub">PORTFOLIO // REVERSE: 1999 ARCHIVE</span>
+                </div>
+            </div>
+            <div class="r-loader-meta-row">
+                <span class="r-loader-meta-label">INITIALIZING DOSSIER</span>
+                <span class="r-loader-pct" id="loaderPct">0%</span>
+            </div>
+            <div class="r-loader-progress-wrap">
+                <div class="r-loader-progress-bar" id="loaderBar"></div>
+            </div>
+        </div>
+        <!-- Bottom gold indicator rule -->
+        <div class="r-loader-bottom-rule" id="loaderBottomRule"></div>
+    </div>
+
+    <!-- Grain Overlay -->
+    <div class="grain-overlay" aria-hidden="true"></div>
+
+    <!-- =========================================================
+         NAVIGATION HEADER — R1999 Style
+    ========================================================= -->
+    <header class="r-header" id="navbar">
+        <div class="r-header-inner">
+
+            <!-- Logo -->
+            <a href="#hero" class="r-brand">
+                <span class="r-brand-initial">J</span>
+                <span class="r-brand-name">JC ABIVA</span>
+            </a>
+
+            <!-- Nav Links (center) -->
+            <nav class="r-nav" id="navMenu">
+                <a href="#hero" class="r-nav-link active">Home</a>
+                <a href="#characters" class="r-nav-link">Characters</a>
+                <a href="#works" class="r-nav-link">Works</a>
+                <a href="#gallery" class="r-nav-link">Gallery</a>
+                <a href="#about" class="r-nav-link">About</a>
+                <a href="#contact" class="r-nav-link">Contact</a>
+            </nav>
+
+            <!-- Right: BGM + CRT + Hire -->
+            <div class="r-header-actions">
+                <button class="r-util-btn" id="bgmToggleBtn" title="Toggle BGM" onclick="toggleBgm()">
+                    <span class="equalizer-bars"><i></i><i></i><i></i><i></i></span>
+                    <span id="bgmBtnText">BGM</span>
+                </button>
+                <button class="r-util-btn" id="sfxToggleBtn" title="Toggle SFX" onclick="toggleSfx()">SFX</button>
+                <a href="#contact" class="r-hire-btn">Hire Me</a>
+                <button class="r-mobile-toggle" id="mobileMenuBtn" onclick="toggleMobileMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- =========================================================
+         HERO SECTION — Full-screen cinematic key visual
+    ========================================================= -->
+    <section class="r-hero" id="hero">
+
+        <!-- Background art -->
+        <div class="r-hero-bg">
+            <img src="images/Mistress of crepuscule.png" alt="Denouement Key Art" class="r-hero-bg-img">
+            <div class="r-hero-bg-vignette"></div>
+        </div>
+
+        <!-- Ornate frame corners -->
+        <div class="r-frame-corner tl"></div>
+        <div class="r-frame-corner tr"></div>
+        <div class="r-frame-corner bl"></div>
+        <div class="r-frame-corner br"></div>
+
+        <!-- Hero content -->
+        <div class="r-hero-content">
+            <div class="r-hero-eyebrow">Portfolio — 2D Game Developer & Artist</div>
+            <h1 class="r-hero-title">
+                <span class="r-hero-name">John Carlo</span>
+                <span class="r-hero-name accent">Abiva</span>
+            </h1>
+            <p class="r-hero-subtitle">
+                Crafting 2D worlds through <em>Godot & Unity</em> — bringing characters to life with <em>Ibis Paint, Clip Studio, Krita & Blender.</em>
+            </p>
+            <div class="r-hero-divider"></div>
+            <div class="r-hero-ctas">
+                <a href="#characters" class="r-btn r-btn-primary">View Characters</a>
+                <a href="#works" class="r-btn r-btn-outline">See Works</a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="r-scroll-indicator">
+            <span class="r-scroll-line"></span>
+            <span class="r-scroll-label">Scroll</span>
+        </div>
+
+    </section>
+
+    <!-- =========================================================
+         CHARACTERS SECTION — R1999 portrait roster style
+    ========================================================= -->
+    <section class="r-section" id="characters">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">Character Roster</div>
+                <h2 class="r-section-title">Cast & Characters</h2>
+                <p class="r-section-desc">Original characters, protagonists, and NPCs designed for 2D RPGs and visual novels.</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="r-filter-tabs">
+                <button class="r-tab active" data-filter="all" onclick="filterAgents('all')">All</button>
+                <button class="r-tab" data-filter="denouement" onclick="filterAgents('denouement')">Denouement</button>
+                <button class="r-tab" data-filter="foodcart" onclick="filterAgents('foodcart')">Food Cart Sim</button>
+                <button class="r-tab" data-filter="concepts" onclick="filterAgents('concepts')">Original Concepts</button>
+            </div>
+
+            <!-- Character Stage — interactive display -->
+            <div class="r-char-stage">
+
+                <!-- Left: Portrait gallery / roster list -->
+                <div class="r-roster-col" id="agentRosterList">
+                    <!-- Populated by script.js -->
+                </div>
+
+                <!-- Right: Active character detail -->
+                <div class="r-char-detail" id="agentTerminal">
+
+                    <!-- Large character art -->
+                    <div class="r-char-art-wrap">
+                        <div class="r-char-art-frame">
+                            <div class="r-portrait-corner tl"></div>
+                            <div class="r-portrait-corner tr"></div>
+                            <div class="r-portrait-corner bl"></div>
+                            <div class="r-portrait-corner br"></div>
+                            <img src="images/Mistress of crepuscule_20260828133647.png" alt="Character Art" id="activeAgentArt" class="r-char-art-img">
+                        </div>
+                        <div class="r-char-art-code" id="activeAgentCode">CREPUSCULE-01</div>
+                    </div>
+
+                    <!-- Character info panel -->
+                    <div class="r-char-info">
+                        <div class="r-char-tags">
+                            <span class="r-char-faction" id="activeAgentFaction">Denouement</span>
+                            <span class="r-char-engine" id="activeAgentEngine">Godot Engine</span>
+                        </div>
+                        <h3 class="r-char-name" id="activeAgentName">Mistress of Crepuscule</h3>
+                        <div class="r-char-alias" id="activeAgentAlias">Protagonist — The First Turning Point</div>
+                        <div class="r-char-divider"></div>
+                        <p class="r-char-desc" id="activeAgentDesc">
+                            The central protagonist of the 2D visual novel and RPG "Denouement: The First Turning Point". Characterized by sharp, mysterious twilight palettes and gothic streetwear flair.
+                        </p>
+                        <div class="r-char-attrs">
+                            <div class="r-attr">
+                                <span class="r-attr-label">Role</span>
+                                <span class="r-attr-val" id="activeAgentRole">Protagonist</span>
+                            </div>
+                            <div class="r-attr">
+                                <span class="r-attr-label">Art Style</span>
+                                <span class="r-attr-val" id="activeAgentStyle">2D Digital &amp; Cel Shaded</span>
+                            </div>
+                            <div class="r-attr">
+                                <span class="r-attr-label">Tool Pipeline</span>
+                                <span class="r-attr-val" id="activeAgentTool">Clip Studio / Godot 4</span>
+                            </div>
+                        </div>
+                        <div class="r-char-actions">
+                            <button class="r-btn r-btn-primary" id="inspectAgentArtBtn" onclick="inspectActiveAgentArt()">View Full Art</button>
+                            <a href="#gallery" class="r-btn r-btn-outline">Art Gallery</a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         WORKS SECTION — Project cards
+    ========================================================= -->
+    <section class="r-section r-section-alt" id="works">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">Projects & Works</div>
+                <h2 class="r-section-title">Games & Development</h2>
+                <p class="r-section-desc">Playable prototypes, indie games, and web applications — built from concept to deployment.</p>
+            </div>
+
+            <div class="r-works-grid">
+
+                <!-- Project 1: Denouement -->
+                <div class="r-work-card">
+                    <div class="r-work-img">
+                        <img src="images/facer.png" alt="Denouement: The First Turning Point" class="r-work-banner">
+                        <span class="r-work-badge">Godot Engine</span>
+                    </div>
+                    <div class="r-work-body">
+                        <div class="r-work-meta">Visual Novel &amp; RPG</div>
+                        <h3 class="r-work-title">Denouement: The First Turning Point</h3>
+                        <p class="r-work-desc">A 2D visual novel and RPG centered on the Mistress of Crepuscule saving her nation from an unknown phenomenon. Built in Godot 4 with original art, dialogue systems, and music.</p>
+                        <div class="r-work-tags">
+                            <span>Godot 4</span><span>GDScript</span><span>Dialogue System</span><span>Original OST</span>
+                        </div>
+                        <div class="r-work-actions">
+                            <button class="r-btn r-btn-sm" onclick="openLightboxFromSrc('images/Mistress of crepuscule.png', 'Denouement Key Art', 'Visual Novel crafted in Godot Engine.')">View Art</button>
+                            <a href="https://nottapple.itch.io/" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-outline">Itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Food Cart Simulator -->
+                <div class="r-work-card">
+                    <div class="r-work-img">
+                        <img src="images/foodsims.PNG" alt="Food Cart Simulator" class="r-work-banner">
+                        <span class="r-work-badge">Godot / Unity 2D</span>
+                    </div>
+                    <div class="r-work-body">
+                        <div class="r-work-meta">Tycoon Simulation</div>
+                        <h3 class="r-work-title">Food Cart Simulator</h3>
+                        <p class="r-work-desc">A cozy Filipino street food simulation featuring complete original 2D asset packs (Fishball, Kikiam, Puto), cart upgrades, sauce physics, and interactive customer NPCs.</p>
+                        <div class="r-work-tags">
+                            <span>Godot / Unity 2D</span><span>Custom Assets</span><span>NPC State Machine</span>
+                        </div>
+                        <div class="r-work-actions">
+                            <button class="r-btn r-btn-sm" onclick="openLightboxFromSrc('images/foodsims.png', 'Food Cart Simulator', 'Street food simulation.')">Preview</button>
+                            <a href="https://nottapple.itch.io/" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-outline">Itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Chaotic City -->
+                <div class="r-work-card">
+                    <div class="r-work-img">
+                        <img src="images/3ad.png" alt="Chaotic City: Arena Royale" class="r-work-banner">
+                        <span class="r-work-badge">Action Combat</span>
+                    </div>
+                    <div class="r-work-body">
+                        <div class="r-work-meta">Arena Brawler</div>
+                        <h3 class="r-work-title">Chaotic City: Arena Royale</h3>
+                        <p class="r-work-desc">A fast-paced arena brawler combining traditional martial arts, elemental magic, and gunplay in an urban combat zone with custom VFX and destructibles.</p>
+                        <div class="r-work-tags">
+                            <span>Combat Scripting</span><span>Hitbox System</span><span>Multiplayer Logic</span>
+                        </div>
+                        <div class="r-work-actions">
+                            <button class="r-btn r-btn-sm" onclick="openLightboxFromSrc('images/3ad.png', 'Chaotic City', 'Urban battle royale action.')">Preview</button>
+                            <a href="https://nottapple.itch.io/" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-outline">Itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Casa Sherlin -->
+                <div class="r-work-card">
+                    <div class="r-work-img r-work-img-placeholder">
+                        <div class="r-work-placeholder-art">
+                            <span class="r-placeholder-title">Casa Sherlin</span>
+                            <span class="r-placeholder-sub">Tenant Portal</span>
+                        </div>
+                        <span class="r-work-badge r-work-badge-web">Web Application</span>
+                    </div>
+                    <div class="r-work-body">
+                        <div class="r-work-meta r-work-meta-live">Live &amp; Deployed</div>
+                        <h3 class="r-work-title">Casa Sherlin — Tenant &amp; Property Portal</h3>
+                        <p class="r-work-desc">A full-featured tenant management portal for Casa Sherlin Apartment. Features tenant dashboard, bill tracking, contract management, maintenance requests, and announcements.</p>
+                        <div class="r-work-tags">
+                            <span>Web App</span><span>Tenant Dashboard</span><span>Billing System</span><span>Live</span>
+                        </div>
+                        <div class="r-work-actions">
+                            <a href="https://casasherlinapt.online/tenant" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-primary">Visit Live Site →</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Antas Usap -->
+                <div class="r-work-card">
+                    <div class="r-work-img">
+                        <img src="images/antasusap.jpg" alt="Antas-Usap" class="r-work-banner">
+                        <span class="r-work-badge">Godot Engine</span>
+                    </div>
+                    <div class="r-work-body">
+                        <div class="r-work-meta r-work-meta-live">Prototype Available</div>
+                        <h3 class="r-work-title">Antas-Usap</h3>
+                        <p class="r-work-desc">A Filipino pixel-art simulation game set in a local carinderia (eatery). Serve customers, manage orders, and experience the warmth of everyday Filipino street food culture — built with original pixel art assets.</p>
+                        <div class="r-work-tags">
+                            <span>Godot Engine</span><span>Pixel Art</span><span>Simulation</span><span>Filipino Culture</span>
+                        </div>
+                        <div class="r-work-actions">
+                            <a href="https://nottapple.itch.io/antas-usap-prototype-versionb/download/Diqlm96YbTlkzFqjXP35eKyzgVKJGR5KDPBifhBc" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-primary">Download →</a>
+                            <a href="https://nottapple.itch.io/" target="_blank" rel="noopener" class="r-btn r-btn-sm r-btn-outline">Itch.io →</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         RETRO TV SECTION
+    ========================================================= -->
+    <section class="r-section" id="retro-tv">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">Video Archive</div>
+                <h2 class="r-section-title">Development Reels</h2>
+                <p class="r-section-desc">Channel-surf through development reels, concept art slides, and asset packs on the retro Denouament monitor.</p>
+            </div>
+
+            <div class="r-tv-stage">
+                <div class="r-tv-monitor">
+
+                    <!-- Screen -->
+                    <div class="r-tv-screen" id="crtTvScreen">
+                        <video id="crtTvVideo" class="r-tv-feed" src="images/video1.mp4" autoplay loop muted playsinline></video>
+                        <img src="images/Cart1.png" alt="CRT Feed" id="crtTvImage" class="r-tv-feed" style="display:none;">
+                        <div class="r-tv-scanlines"></div>
+                        <canvas id="crtNoiseCanvas" class="r-tv-noise"></canvas>
+                        <div class="r-tv-osd">
+                            <span id="crtChDisplay">CH-01 — Gameplay Reel</span>
+                            <span id="crtTapeStatus">▶ PLAY</span>
+                        </div>
+                        <div class="r-tv-osd r-tv-osd-bottom">
+                            <span id="crtTitleDisplay">2D Game Engine Footage</span>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="r-tv-controls">
+                        <div class="r-tv-brand">
+                            <span>RANDOM PLAY</span>
+                            <div class="r-tv-led" id="tvPowerLed"></div>
+                        </div>
+                        <div class="r-tv-channels">
+                            <button class="r-ch-btn active" data-channel="1" onclick="switchTvChannel(1)">
+                                <span>01</span><small>Para Po</small>
+                            </button>
+                            <button class="r-ch-btn" data-channel="2" onclick="switchTvChannel(2)">
+                                <span>02</span><small>Sparkle</small>
+                            </button>
+                            <button class="r-ch-btn" data-channel="3" onclick="switchTvChannel(3)">
+                                <span>03</span><small>Food Cart</small>
+                            </button>
+                            <button class="r-ch-btn" data-channel="4" onclick="switchTvChannel(4)">
+                                <span>04</span><small>Regions</small>
+                            </button>
+                            <button class="r-ch-btn" data-channel="0" onclick="switchTvChannel(0)">
+                                <span>⚡</span><small>Static</small>
+                            </button>
+                        </div>
+                        <div class="r-tv-dials">
+                            <div class="r-dial" onclick="cycleTvChannel(1)" title="Next Channel">
+                                <div class="r-dial-notch"></div>
+                                <span>TUNE</span>
+                            </div>
+                            <div class="r-dial" onclick="toggleTvStatic()" title="Toggle Static">
+                                <div class="r-dial-notch r-dial-notch-2"></div>
+                                <span>SIGNAL</span>
+                            </div>
+                            <div class="r-dial" id="tvAudioToggle" onclick="toggleTvAudio()">
+                                <div class="r-dial-notch r-dial-notch-3"></div>
+                                <span id="tvAudioLabel">VOL</span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         GALLERY / VAULT SECTION
+    ========================================================= -->
+    <section class="r-section r-section-alt" id="gallery">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">Art Vault</div>
+                <h2 class="r-section-title">Illustrations &amp; Assets</h2>
+                <p class="r-section-desc">Concept artworks, character illustrations, environment paintings, and 2D asset packs.</p>
+            </div>
+
+            <!-- Filter pills -->
+            <div class="r-gallery-filters">
+                <button class="r-gallery-pill active" data-cat="all" onclick="filterGallery('all')">All Assets</button>
+                <button class="r-gallery-pill" data-cat="characters" onclick="filterGallery('characters')">Characters &amp; Portraits</button>
+                <button class="r-gallery-pill" data-cat="environments" onclick="filterGallery('environments')">Environments</button>
+                <button class="r-gallery-pill" data-cat="foodcart" onclick="filterGallery('foodcart')">Food Cart Assets</button>
+                <button class="r-gallery-pill" data-cat="games" onclick="filterGallery('games')">Games &amp; Prototypes</button>
+            </div>
+
+            <!-- Gallery grid -->
+            <div class="r-gallery-grid" id="vaultGrid">
+                <!-- Populated by script.js -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         ABOUT / DOSSIER SECTION
+    ========================================================= -->
+    <section class="r-section" id="about">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">About Me</div>
+                <h2 class="r-section-title">Creator Profile</h2>
+            </div>
+
+            <div class="r-about-layout">
+
+                <!-- Left: ID Card -->
+                <div class="r-id-card">
+                    <div class="r-id-photo-wrap">
+                        <img src="images/a4a.jpg" alt="John Carlo Abiva" class="r-id-photo">
+                    </div>
+                    <div class="r-id-info">
+                        <h3 class="r-id-name">John Carlo N. Abiva</h3>
+                        <div class="r-id-role">2D Game Developer &amp; Concept Artist</div>
+                        <div class="r-id-rule"></div>
+                        <div class="r-id-meta">
+                            <div class="r-id-row">
+                                <span>Game Engines</span>
+                                <span>Godot 4.x · Unity 2D</span>
+                            </div>
+                            <div class="r-id-row">
+                                <span>2D Art Tools</span>
+                                <span>Ibis Paint · Clip Studio · Pixel Studio · Krita</span>
+                            </div>
+                            <div class="r-id-row">
+                                <span>3D Modeling</span>
+                                <span>Blender</span>
+                            </div>
+                            <div class="r-id-row">
+                                <span>Itch.io</span>
+                                <span><a href="https://nottapple.itch.io/" target="_blank" rel="noopener">nottapple.itch.io ↗</a></span>
+                            </div>
+                            <div class="r-id-row">
+                                <span>Email</span>
+                                <span><a href="mailto:abivajohncarlo@gmail.com">abivajohncarlo@gmail.com</a></span>
+                            </div>
+                            <div class="r-id-row">
+                                <span>Status</span>
+                                <span class="r-id-status">Available for Contracts</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Bio + Skills -->
+                <div class="r-about-right">
+
+                    <div class="r-bio">
+                        <p>Hi! I'm <strong>John Carlo N. Abiva</strong>, a dedicated 2D game developer and digital artist. I bridge creative visual design and responsive game architecture — transforming concepts into living game worlds.</p>
+                        <p>For <strong>Game Development</strong>, I build responsive game loops, state machines, and combat systems using <strong>Godot Engine</strong> and <strong>Unity 2D</strong>.</p>
+                        <p>My <strong>2D Art pipeline</strong> spans <strong>Ibis Paint</strong> for ideation, <strong>Clip Studio Paint</strong> for character concepts and cel shading, <strong>Pixel Studio</strong> for sprites and tilesets, and <strong>Krita</strong> for environmental matte art. For 3D, I build low-poly props in <strong>Blender</strong>.</p>
+                    </div>
+
+                    <!-- Skill bars -->
+                    <div class="r-skills">
+
+                        <div class="r-skill-group-label">Game Development</div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Godot Engine (4.x / 3.x)</span>
+                                <span class="r-skill-pct">95%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:95%"></div></div>
+                        </div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Unity 2D Engine</span>
+                                <span class="r-skill-pct">90%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:90%"></div></div>
+                        </div>
+
+                        <div class="r-skill-group-label">2D Art &amp; Illustration</div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Clip Studio Paint</span>
+                                <span class="r-skill-pct">94%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:94%"></div></div>
+                        </div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Ibis Paint</span>
+                                <span class="r-skill-pct">92%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:92%"></div></div>
+                        </div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Pixel Studio</span>
+                                <span class="r-skill-pct">93%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:93%"></div></div>
+                        </div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Krita</span>
+                                <span class="r-skill-pct">89%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:89%"></div></div>
+                        </div>
+
+                        <div class="r-skill-group-label">3D Modeling</div>
+
+                        <div class="r-skill">
+                            <div class="r-skill-head">
+                                <span class="r-skill-name">Blender 3D</span>
+                                <span class="r-skill-pct">86%</span>
+                            </div>
+                            <div class="r-skill-bar"><div class="r-skill-fill" style="width:86%"></div></div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         CONTACT SECTION
+    ========================================================= -->
+    <section class="r-section r-section-alt" id="contact">
+        <div class="r-section-inner">
+
+            <div class="r-section-header">
+                <div class="r-section-rule"></div>
+                <div class="r-section-label">Get in Touch</div>
+                <h2 class="r-section-title">Contact &amp; Commission</h2>
+                <p class="r-section-desc">Looking for a 2D game programmer, character designer, or prototype developer? Send a message.</p>
+            </div>
+
+            <div class="r-contact-layout">
+
+                <!-- Left: Form -->
+                <div class="r-contact-form-wrap">
+                    <form class="r-contact-form" id="contactForm" onsubmit="handleFormSubmit(event)">
+
+                        <div class="r-form-row">
+                            <div class="r-form-group">
+                                <label for="senderName">Name / Studio</label>
+                                <input type="text" id="senderName" placeholder="Your name or studio" required>
+                            </div>
+                            <div class="r-form-group">
+                                <label for="senderEmail">Email Address</label>
+                                <input type="email" id="senderEmail" placeholder="your@email.com" required>
+                            </div>
+                        </div>
+
+                        <div class="r-form-row">
+                            <div class="r-form-group">
+                                <label for="projectType">Project Type</label>
+                                <select id="projectType">
+                                    <option value="godot">Godot 2D Game Development</option>
+                                    <option value="unity">Unity 2D Game Programming</option>
+                                    <option value="2dart">2D Concept &amp; Character Art</option>
+                                    <option value="pixel">Pixel Art &amp; Sprite Sheets</option>
+                                    <option value="blender">3D Modeling &amp; Props (Blender)</option>
+                                    <option value="full">Full Indie Prototype Collaboration</option>
+                                </select>
+                            </div>
+                            <div class="r-form-group">
+                                <label for="timeline">Timeline / Scope</label>
+                                <input type="text" id="timeline" placeholder="e.g. 2–4 weeks / milestone-based">
+                            </div>
+                        </div>
+
+                        <div class="r-form-group">
+                            <label for="messageText">Message</label>
+                            <textarea id="messageText" rows="5" placeholder="Describe your project, art requirements, or ideas..." required></textarea>
+                        </div>
+
+                        <div class="r-form-footer">
+                            <button type="submit" class="r-btn r-btn-primary" id="sendBtn">Send Message</button>
+                            <div class="r-form-feedback" id="formFeedback"></div>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Right: Direct contact -->
+                <div class="r-contact-info">
+                    <h3 class="r-contact-info-title">Direct Contact</h3>
+                    <div class="r-contact-rule"></div>
+
+                    <div class="r-contact-item">
+                        <span class="r-contact-label">Email</span>
+                        <span class="r-contact-val">
+                            <a href="mailto:abivajohncarlo@gmail.com">abivajohncarlo@gmail.com</a>
+                            <button class="r-copy-btn" onclick="copyText('abivajohncarlo@gmail.com', this)">Copy</button>
+                        </span>
+                    </div>
+
+                    <div class="r-contact-item">
+                        <span class="r-contact-label">Itch.io</span>
+                        <span class="r-contact-val">
+                            <a href="https://nottapple.itch.io/" target="_blank" rel="noopener">nottapple.itch.io ↗</a>
+                        </span>
+                    </div>
+
+                    <div class="r-contact-item">
+                        <span class="r-contact-label">Status</span>
+                        <span class="r-contact-val r-contact-open">Open for freelance &amp; collaborations</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================= -->
+    <footer class="r-footer">
+        <div class="r-footer-inner">
+            <div class="r-footer-brand">
+                <span class="r-footer-initial">J</span>
+                <div>
+                    <div class="r-footer-name">John Carlo Abiva</div>
+                    <div class="r-footer-role">2D Game Developer &amp; Artist</div>
+                </div>
+            </div>
+            <div class="r-footer-links">
+                <a href="#hero">Home</a>
+                <a href="#characters">Characters</a>
+                <a href="#works">Works</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="r-footer-copy">
+                &copy; 2026 John Carlo N. Abiva. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <!-- =========================================================
+         LIGHTBOX OVERLAY
+    ========================================================= -->
+    <div class="r-lightbox" id="lightboxOverlay" onclick="closeLightbox()">
+        <div class="r-lightbox-inner" onclick="event.stopPropagation()">
+            <button class="r-lightbox-close" onclick="closeLightbox()">✕</button>
+            <img src="" alt="" id="lightboxImg" class="r-lightbox-img">
+            <div class="r-lightbox-caption">
+                <div class="r-lightbox-title" id="lightboxTitle"></div>
+                <div class="r-lightbox-desc" id="lightboxDesc"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- =========================================================
+         BGM PLAYER (hidden audio)
+    ========================================================= -->
+    <audio id="bgmAudio" preload="none"></audio>
+
+    <!-- Main Script -->
+    <script src="script.js"></script>
+
+</body>
+</html>
