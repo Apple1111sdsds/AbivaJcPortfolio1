@@ -1,9 +1,9 @@
-/* =========================================================
-   Portfolio Script — John Carlo N. Abiva
+﻿/* =========================================================
+   Portfolio Script â€” John Carlo N. Abiva
    ========================================================= */
 
 // ---------------------------------------------------------
-// LOADING SCREEN — Reverse 1999 Style
+// LOADING SCREEN â€” Reverse 1999 Style
 // Image begins dark -> bright restored artwork fills from bottom up
 // ---------------------------------------------------------
 (function () {
@@ -228,7 +228,7 @@ function updateBgmTrackUi(index) {
     if (!track) return;
     const titleEl = document.getElementById('bgmTrackTitle');
     if (titleEl) {
-        titleEl.textContent = `♫ ${track.title} // ${track.sub}`;
+        titleEl.textContent = `â™« ${track.title} // ${track.sub}`;
     }
 }
 
@@ -251,7 +251,7 @@ function setBgmUiState(playing) {
         deck.classList.toggle('playing', playing);
     }
     if (playIcon) {
-        playIcon.textContent = playing ? "❚❚" : "▶";
+        playIcon.textContent = playing ? "âšâš" : "â–¶";
     }
 }
 
@@ -741,7 +741,7 @@ const tvChannels = {
     1: {
         type: "video",
         video: "images/video1.mp4",
-        tape: "PLAY ▶ 00:23:00",
+        tape: "PLAY â–¶ 00:23:00",
         ch: "CH-01 // GAMEPLAY TAPE 01",
         title: "2D Game Engine Footage",
         sub: "Live In-Engine Reel // 1080p FHD 60FPS"
@@ -749,7 +749,7 @@ const tvChannels = {
     2: {
         type: "video",
         video: "images/video2.mp4",
-        tape: "PLAY ▶ 00:13:00",
+        tape: "PLAY â–¶ 00:13:00",
         ch: "CH-02 // ACTION CLIP TAPE 02",
         title: "Combat & Physics Showcase",
         sub: "Real-Time 2D Animation & Action Demo"
@@ -757,7 +757,7 @@ const tvChannels = {
     3: {
         type: "image",
         image: "images/Cart1.png",
-        tape: "STILL FRAME ▣",
+        tape: "STILL FRAME â–£",
         ch: "CH-03 // FOOD CART SIMULATOR",
         title: "Street Food Cart Blueprint",
         sub: "Filipino Street Food Tycoon // Godot & Unity"
@@ -765,7 +765,7 @@ const tvChannels = {
     4: {
         type: "image",
         image: "images/1a.jpg",
-        tape: "STILL FRAME ▣",
+        tape: "STILL FRAME â–£",
         ch: "CH-04 // DENOUEMENT REGIONS",
         title: "Laguna 2D Concept Design",
         sub: "Denouement RPG Region // Godot 4"
@@ -819,7 +819,7 @@ function switchTvChannel(ch) {
         canvas.classList.add('active');
         startTvNoise();
         if (chDisplay) chDisplay.textContent = "CH-00 // NO SIGNAL [STATIC]";
-        if (tapeStatus) tapeStatus.textContent = "SIGNAL LOSS ✖";
+        if (tapeStatus) tapeStatus.textContent = "SIGNAL LOSS âœ–";
         if (titleDisplay) titleDisplay.textContent = "White Noise Signal Loss";
         if (subDisplay) subDisplay.textContent = "Hollow Interference Detected";
     } else {
@@ -1351,7 +1351,7 @@ window.addEventListener('keydown', (e) => {
 // 6. COMMS FORM & UTILITIES
 // ---------------------------------------------------------
 // ---------------------------------------------------------
-// 6. COMMS FORM & DIRECT EMAIL SUBMISSION (abivajohncarlo@gmail.com)
+// 6. COMMS FORM & DIRECT EMAIL SUBMISSION (abivajohncarlo9@gmail.com)
 // ---------------------------------------------------------
 async function handleFormSubmit(e) {
     e.preventDefault();
@@ -1378,12 +1378,12 @@ async function handleFormSubmit(e) {
         btn.textContent = 'Sending Message...';
     }
     if (feedback) {
-        feedback.textContent = 'Transmitting brief to abivajohncarlo@gmail.com...';
+        feedback.textContent = 'Transmitting brief to abivajohncarlo9@gmail.com...';
         feedback.style.color = 'var(--gold)';
     }
 
     try {
-        const res = await fetch('https://formsubmit.co/ajax/abivajohncarlo@gmail.com', {
+        const res = await fetch('https://formsubmit.co/ajax/abivajohncarlo9@gmail.com', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -1405,7 +1405,7 @@ async function handleFormSubmit(e) {
             playSfx('success');
             if (btn) btn.textContent = 'Sent Successfully';
             if (feedback) {
-                feedback.textContent = `Transmission received! Your message was sent to abivajohncarlo@gmail.com. Thank you, ${name}!`;
+                feedback.textContent = `Transmission received! Your message was sent to abivajohncarlo9@gmail.com. Thank you, ${name}!`;
                 feedback.style.color = '#6bcb77';
             }
             const form = document.getElementById('contactForm');
@@ -1424,14 +1424,14 @@ async function handleFormSubmit(e) {
         // Fallback: mailto link opens default email app prefilled
         const subject = encodeURIComponent(`Commission Brief: ${projectType} from ${name}`);
         const body = encodeURIComponent(`Sender Name: ${name}\nEmail: ${email}\nProject Type: ${projectType}\nTimeline: ${timeline}\n\nMessage:\n${message}`);
-        window.location.href = `mailto:abivajohncarlo@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:abivajohncarlo9@gmail.com?subject=${subject}&body=${body}`;
 
         if (btn) {
             btn.disabled = false;
             btn.textContent = 'Send Message';
         }
         if (feedback) {
-            feedback.textContent = 'Opened your email client to deliver to abivajohncarlo@gmail.com.';
+            feedback.textContent = 'Opened your email client to deliver to abivajohncarlo9@gmail.com.';
             feedback.style.color = 'var(--gold)';
         }
     }
@@ -1700,6 +1700,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillFills.forEach(el => obs.observe(el));
     }
 
-    console.log('%cJohn Carlo Abiva Portfolio — Ready.', 'color: #c9a84c; font-weight: bold; padding: 4px;');
+    console.log('%cJohn Carlo Abiva Portfolio â€” Ready.', 'color: #c9a84c; font-weight: bold; padding: 4px;');
 });
+
 
