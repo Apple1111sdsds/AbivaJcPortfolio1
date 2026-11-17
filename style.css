@@ -447,16 +447,16 @@ body:not(.bgm-playing) .equalizer-bars i { animation: none; height: 3px; }
 
 .r-hero-bg-img {
     width: auto;
-    max-width: 66vw;
-    height: 88vh;
-    max-height: 890px;
+    max-width: 62vw;
+    height: 86vh;
+    max-height: 860px;
     object-fit: contain;
     object-position: left center;
-    margin-left: 1.5vw;
-    filter: sepia(0.08) brightness(0.92) contrast(1.05);
-    opacity: 0.92;
-    -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 70%, transparent 100%);
-    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, #000 70%, transparent 100%);
+    margin-left: 2vw;
+    filter: sepia(0.06) brightness(0.92) contrast(1.05);
+    opacity: 0.95;
+    -webkit-mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 55%, transparent 100%);
+    mask-image: radial-gradient(ellipse 85% 85% at 50% 50%, #000 55%, transparent 100%);
 }
 
 .r-hero-bg-vignette {
