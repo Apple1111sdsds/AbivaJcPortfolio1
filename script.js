@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    Portfolio Script â€” John Carlo N. Abiva
    ========================================================= */
 
@@ -531,6 +531,57 @@ const agentRoster = [
         thumb: "images/blue.png",
         watermark: "CHILL",
         desc: "A relaxed, stylish street food vendor assistant created for 'Food Cart Simulator'. Features warm, approachable color palettes and charming idle expressions."
+    },
+    {
+        id: "npc-jose",
+        code: "NPC_ID: #001",
+        name: "JOSE R. ALONZO",
+        alias: "Customer NPC // Food Cart Simulator",
+        faction: "foodcart",
+        factionLabel: "FOOD CART SIM",
+        engine: "GODOT / UNITY 2D",
+        role: "Customer (Age: 17)",
+        style: "2D Character Illustration",
+        tool: "Clip Studio / Ibis Paint",
+        resolution: "768 x 1024 Portrait",
+        image: "images/npc_jose.jpg",
+        thumb: "images/npc_jose.jpg",
+        watermark: "JOSE",
+        desc: "Jose R. Alonzo (NPC#001, Age: 17) is a recurring customer NPC in 'Food Cart Simulator'. Designed with soft brown hair, a casual yellow-and-green striped shirt, and reflective blue eyes for daytime street dining interactions."
+    },
+    {
+        id: "npc-miya",
+        code: "NPC_ID: #003",
+        name: "MIYA P. DELROSARIO",
+        alias: "Student Customer // Paaralan ng Laguna",
+        faction: "foodcart",
+        factionLabel: "FOOD CART SIM",
+        engine: "GODOT / UNITY 2D",
+        role: "Student NPC (Age: 19)",
+        style: "2D Character Illustration",
+        tool: "Clip Studio / Ibis Paint",
+        resolution: "768 x 1024 Portrait",
+        image: "images/npc_miya.jpg",
+        thumb: "images/npc_miya.jpg",
+        watermark: "MIYA",
+        desc: "Miya P. Delrosario (NPC#003, Age: 19) is a studious customer from Paaralan ng Laguna. Recognizable by her bold red-framed glasses, dark hair with hair ornaments, green school lanyard, and distinctive purple eyes."
+    },
+    {
+        id: "npc-kathy",
+        code: "NPC_ID: #004",
+        name: "KATHY N. ARBAS",
+        alias: "Student Customer // Pertue College",
+        faction: "foodcart",
+        factionLabel: "FOOD CART SIM",
+        engine: "GODOT / UNITY 2D",
+        role: "Student NPC (Age: 18)",
+        style: "2D Character Illustration",
+        tool: "Clip Studio / Ibis Paint",
+        resolution: "768 x 1024 Portrait",
+        image: "images/npc_kathy.jpg",
+        thumb: "images/npc_kathy.jpg",
+        watermark: "KATHY",
+        desc: "Kathy N. Arbas (NPC#004, Age: 18) is an energetic customer from Pertue College. Characterized by dark blue hair with sharp red highlights, radiant star-pupil eyes, and a neat school tie uniform."
     },
     {
         id: "denouement-madam",
@@ -1168,6 +1219,30 @@ const galleryData = [
         image: "images/Sauce.png",
         category: "foodcart",
         tag: "GAME PROP"
+    },
+    {
+        id: "npc-jose-asset",
+        title: "Jose R. Alonzo (NPC#001)",
+        desc: "Food Cart customer character concept sheet (Age: 17).",
+        image: "images/npc_jose.jpg",
+        category: "foodcart",
+        tag: "NPC ASSET"
+    },
+    {
+        id: "npc-miya-asset",
+        title: "Miya P. Delrosario (NPC#003)",
+        desc: "Paaralan ng Laguna student customer concept sheet (Age: 19).",
+        image: "images/npc_miya.jpg",
+        category: "foodcart",
+        tag: "NPC ASSET"
+    },
+    {
+        id: "npc-kathy-asset",
+        title: "Kathy N. Arbas (NPC#004)",
+        desc: "Pertue College student customer concept sheet (Age: 18).",
+        image: "images/npc_kathy.jpg",
+        category: "foodcart",
+        tag: "NPC ASSET"
     },
 
     // Games & Action

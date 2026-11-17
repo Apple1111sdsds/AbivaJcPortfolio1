@@ -430,6 +430,7 @@ body:not(.bgm-playing) .equalizer-bars i { animation: none; height: 3px; }
     display: flex;
     align-items: flex-end;
     overflow: hidden;
+    background: #0d0c0a;
 }
 
 /* Background art */
@@ -437,24 +438,35 @@ body:not(.bgm-playing) .equalizer-bars i { animation: none; height: 3px; }
     position: absolute;
     inset: 0;
     z-index: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    background: #0d0c0a;
 }
 
 .r-hero-bg-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 25%;
-    filter: sepia(0.2) brightness(0.65) contrast(1.1);
-    opacity: 0.7;
+    width: auto;
+    max-width: 58vw;
+    height: 82vh;
+    max-height: 800px;
+    object-fit: contain;
+    object-position: left center;
+    margin-left: 3vw;
+    filter: sepia(0.08) brightness(0.92) contrast(1.05);
+    opacity: 0.92;
+    -webkit-mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 65%, transparent 100%);
+    mask-image: radial-gradient(ellipse 88% 88% at 50% 50%, #000 65%, transparent 100%);
 }
 
 .r-hero-bg-vignette {
     position: absolute;
     inset: 0;
+    pointer-events: none;
     background: 
-        radial-gradient(circle at 70% 45%, rgba(16,15,13,0.1) 0%, rgba(16,15,13,0.7) 55%, #100f0d 100%),
-        linear-gradient(to right, rgba(16,15,13,0.85) 0%, rgba(16,15,13,0.2) 35%, rgba(16,15,13,0.85) 75%, #100f0d 100%),
-        linear-gradient(to top, #100f0d 0%, rgba(16,15,13,0.6) 20%, transparent 60%);
+        linear-gradient(to right, transparent 0%, transparent 48%, rgba(16,15,13,0.7) 65%, #100f0d 88%),
+        linear-gradient(to top, #100f0d 0%, rgba(16,15,13,0.3) 10%, transparent 25%),
+        linear-gradient(to bottom, #100f0d 0%, transparent 12%);
 }
 
 /* Ornate frame corners */
@@ -1870,6 +1882,8 @@ body:not(.bgm-playing) .equalizer-bars i { animation: none; height: 3px; }
     .r-mobile-toggle { display: flex; }
 
     .r-hero-content { padding-right: 2rem; max-width: 100%; }
+    .r-hero-bg { justify-content: center; }
+    .r-hero-bg-img { max-width: 92vw; height: 50vh; max-height: 450px; margin-left: 0; opacity: 0.35; }
     .r-hero-bg-vignette { background: linear-gradient(to top, rgba(16,15,13,0.95) 0%, rgba(16,15,13,0.5) 50%, rgba(16,15,13,0.3) 100%); }
 
     .r-char-stage { grid-template-columns: 1fr; }
